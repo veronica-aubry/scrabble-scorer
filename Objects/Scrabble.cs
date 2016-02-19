@@ -13,6 +13,7 @@ namespace Scrabbles
     // private string _input;
     private char[] _inputArray;
     private int _scrabbleTotal;
+    private string _input;
     private static char [] oneScore  = {'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'};
     private static char [] twoScore =  {'D', 'G'};
     private static char [] threeScore =  {'B', 'C', 'M', 'P'};
@@ -34,10 +35,21 @@ namespace Scrabbles
 
     public Scrabble(string input)
     {
-      input = input.ToUpper();
-      _inputArray = input.ToCharArray();
+      _input = input.ToUpper();
+      _inputArray = _input.ToCharArray();
       _scrabbleTotal = 0;
     }
+
+    public int GetTotal()
+    {
+      return _scrabbleTotal;
+    }
+
+    public string GetWord()
+    {
+      return _input;
+    }
+
 
     public int Scorer()
     {

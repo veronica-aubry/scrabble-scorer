@@ -5,6 +5,23 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
   </head>
   <body>
-    <h1>THIS IS A TEMPLATE</h1>
+    <h1>Enter a Word to see the Scrabble score you would get.</h1>
+    <form action="/" method="post">
+      <input type="text" name="word" value=""> Enter a Word
+      <button type="submit" name="button">PRESS THIS</button>
+    </form>
+    <h2>Your word and score:</h2>
+
+    @{
+           if(Model.GetWord() == "")
+           {
+               <p>Choose your word.</p>
+           }else
+           {
+             <h1>@Model.GetWord()</h1>
+             <p>@Model.Scorer() Points!</p>
+           }
+         }
+
   </body>
 </html>
